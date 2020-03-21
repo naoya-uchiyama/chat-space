@@ -3,50 +3,50 @@ $(function(){
   var buildHTML = function(message) {
     if (message.content && message.image) {
       var html = `<div class="message" data-message-id=` + message.id + `>` +
-      `<div class="upper-message">` +
-        `<div class="upper-message__user-name">` +
+      `<div class="message__upper-info">` +
+        `<p class="message__upper-info__talker">` +
           message.user_name +
-        `</div>` +
-        `<div class="upper-message__date">` +
-          message.created_at +
-        `</div>` +
-      `</div>` +
-      `<div class="lower-message">` +
-        `<p class="lower-message__content">` +
-          message.content +
         `</p>` +
-        `<img src="` + message.image + `" class="lower-message__image" >` +
+        `<p class="message__upper-info__date">` +
+          message.created_at +
+        `</p>` +
       `</div>` +
+      `<p class="message__text">` +
+      `</p>` +
+      `<p class="lower-message__content">` +
+        message.content +
+      `</p>` +
+      `<img class="lower-message__image" src="` + message.image + `" class="lower-message__image" >` +
+      `<p>`  + `</p>` +
     `</div>`
   } else if (message.content) {
     var html = `<div class="message" data-message-id=` + message.id + `>` +
-      `<div class="upper-message">` +
-        `<div class="upper-message__user-name">` +
+      `<div class="message__upper-info">` +
+        `<p class="message__upper-info__talker">` +
           message.user_name +
-        `</div>` +
-        `<div class="upper-message__date">` +
+        `</p>` +
+        `<p class="message__upper-info__date">` +
           message.created_at +
-        `</div>` +
-      `</div>` +
-      `<div class="lower-message">` +
-        `<p class="lower-message__content">` +
-          message.content +
         `</p>` +
       `</div>` +
+      `<p class="message__text">` +
+      `</p>` +
+      `<p class="lower-message__content">` +
+        message.content +
+      `</p>` +
     `</div>`
   } else if (message.image) {
     var html = `<div class="message" data-message-id=` + message.id + `>` +
-      `<div class="upper-message">` +
-        `<div class="upper-message__user-name">` +
+      `<div class="message__upper-info">` +
+        `<p class="message__upper-info__talker">` +
           message.user_name +
-        `</div>` +
-        `<div class="upper-message__date">` +
+        `</p>` +
+        `<p class="message__upper-info__date">` +
           message.created_at +
-        `</div>` +
+        `</p>` +
       `</div>` +
-      `<div class="lower-message">` +
-        `<img src="` + message.image + `" class="lower-message__image" >` +
-      `</div>` +
+      `<img class="lower-message__image" src="` + message.image + `" class="lower-message__image" >` +
+      `</p>` +
     `</div>`
   };
   return html;
