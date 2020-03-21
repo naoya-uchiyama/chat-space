@@ -11,13 +11,13 @@ $(function(){
           message.created_at +
         `</p>` +
       `</div>` +
-      `<p class="message__text">` +
-      `</p>` +
+      `<div class="message__text">` +
       `<p class="lower-message__content">` +
         message.content +
       `</p>` +
       `<img class="lower-message__image" src="` + message.image + `" class="lower-message__image" >` +
       `<p>`  + `</p>` +
+      `</div>` +
     `</div>`
   } else if (message.content) {
     var html = `<div class="message" data-message-id=` + message.id + `>` +
@@ -29,11 +29,11 @@ $(function(){
           message.created_at +
         `</p>` +
       `</div>` +
-      `<p class="message__text">` +
-      `</p>` +
+      `<div class="message__text">` +
       `<p class="lower-message__content">` +
         message.content +
       `</p>` +
+      `</div>` +
     `</div>`
   } else if (message.image) {
     var html = `<div class="message" data-message-id=` + message.id + `>` +
@@ -45,8 +45,10 @@ $(function(){
           message.created_at +
         `</p>` +
       `</div>` +
-      `<img class="lower-message__image" src="` + message.image + `" class="lower-message__image" >` +
-      `</p>` +
+      `<div class="message__text">` +
+        `<img class="lower-message__image" src="` + message.image + `" class="lower-message__image" >` +
+        `</p>` +
+      `</div>` +
     `</div>`
   };
   return html;
